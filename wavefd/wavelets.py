@@ -60,6 +60,13 @@ class BaseWavelet():
         samples = self(times)
         return samples
 
+    def __call__(self, time):
+        """
+        Not implemented
+        """
+        raise NotImplementedError
+
+
 
 class RickerWavelet(BaseWavelet):
     r"""
@@ -140,7 +147,6 @@ class RickerWavelet(BaseWavelet):
             The wavelet function values at the given time(s).
 
         """
-        t = time - self.delay
-        aux = (np.pi*self.frequency*t)**2
+        aux = (np.pi*self.frequency*(time - self.delay))**2
         res = (1 - 2*aux)*np.exp(-aux)
         return self.amplitude*res
