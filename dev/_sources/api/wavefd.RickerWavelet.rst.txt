@@ -1,0 +1,35 @@
+wavefd.RickerWavelet
+====================
+
+.. currentmodule:: wavefd
+
+.. autoclass:: RickerWavelet
+
+
+
+
+.. raw:: html
+
+    <hr>
+
+Methods Documentation
+---------------------
+
+
+
+
+
+.. automethod:: RickerWavelet.copy
+
+
+
+.. automethod:: RickerWavelet.sample
+
+
+
+
+
+
+.. raw:: html
+
+     <div style='clear:both'></div>

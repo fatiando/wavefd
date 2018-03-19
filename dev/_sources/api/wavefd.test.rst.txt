@@ -1,0 +1,11 @@
+wavefd.test
+===========
+
+.. currentmodule:: wavefd
+
+.. autofunction:: test
+
+
+.. raw:: html
+
+     <div style='clear:both'></div>

@@ -1,0 +1,47 @@
+.. raw:: html
+
+    <div class="api-module">
+
+.. raw:: html
+
+    <hr>
+
+.. automodule:: wavefd
+
+
+
+.. rubric:: Classes
+
+.. autosummary::
+  :toctree: ./
+
+  RickerWavelet
+
+
+
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+  :toctree: ./
+
+  lame_lambda
+
+  lame_mu
+
+  test
+
+
+
+
+
+
+
+
+
+.. raw:: html
+
+    </div>

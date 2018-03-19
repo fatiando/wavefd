@@ -1,0 +1,11 @@
+wavefd.lame\_mu
+===============
+
+.. currentmodule:: wavefd
+
+.. autofunction:: lame_mu
+
+
+.. raw:: html
+
+     <div style='clear:both'></div>

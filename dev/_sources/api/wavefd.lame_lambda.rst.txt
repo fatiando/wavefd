@@ -1,0 +1,11 @@
+wavefd.lame\_lambda
+===================
+
+.. currentmodule:: wavefd
+
+.. autofunction:: lame_lambda
+
+
+.. raw:: html
+
+     <div style='clear:both'></div>
