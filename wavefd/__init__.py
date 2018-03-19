@@ -1,9 +1,10 @@
 """
-Main API.
+Functions and classes in the wavefd package.
 """
+from .lame import lame_lambda, lame_mu
+
 from ._version import get_versions as _get_versions
 
-from .base import BaseFD2D
 
 # Get the version number through versioneer
 __version__ = _get_versions()['version']

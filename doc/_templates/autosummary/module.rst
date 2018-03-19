@@ -2,9 +2,6 @@
 
     <div class="api-module">
 
-``{{ fullname }}``
-{% for i in range(fullname|length + 15) %}-{% endfor %}
-
 .. raw:: html
 
     <hr>
