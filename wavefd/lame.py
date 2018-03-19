@@ -39,8 +39,9 @@ def lame_lambda(pvel, svel, density):
         >>> pvel = np.array([2000., 3000.])
         >>> svel = np.array([1000., 1700.])
         >>> density = np.array([2700., 3100.])
-        >>> print(lame_lambda(pvel, svel, density))
-        [  5.40000000e+09   9.98200000e+09]
+        >>> lamb = lame_lambda(pvel, svel, density)
+        >>> print(' '.join(['{:.0f}'.format(i) for i in lamb]))
+        5400000000 9982000000
 
     """
     return density*pvel**2 - 2*density*svel**2
@@ -79,8 +80,9 @@ def lame_mu(svel, density):
         >>> import numpy as np
         >>> svel = np.array([1000., 1700.])
         >>> density = np.array([2700., 3100.])
-        >>> print(lame_mu(svel, density))
-        [  2.70000000e+09   8.95900000e+09]
+        >>> mu = lame_mu(svel, density)
+        >>> print(' '.join(['{:.0f}'.format(i) for i in mu]))
+        2700000000 8959000000
 
     """
     return density*svel**2
