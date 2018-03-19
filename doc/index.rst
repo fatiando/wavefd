@@ -106,6 +106,7 @@ of the :ref:`BSD 3-clause License <license>`.
     :hidden:
     :caption: Documentation
 
+    tutorials/index.rst
     install.rst
     api/index.rst
     license.rst

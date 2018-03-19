@@ -2,6 +2,7 @@
 Functions and classes in the wavefd package.
 """
 from .lame import lame_lambda, lame_mu
+from .wavelets import RickerWavelet
 
 from ._version import get_versions as _get_versions
 
