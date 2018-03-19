@@ -3,11 +3,6 @@ WaveFD
 
 **Finite difference seismic wave propagation**
 
-`Documentation <http://www.fatiando.org/wavefd>`_ |
-`Install <http://www.fatiando.org/wavefd/install.html>`_ |
-`API <http://www.fatiando.org/wavefd/api>`_ |
-`Contact <https://gitter.im/fatiando/fatiando>`_
-
 .. image:: http://img.shields.io/pypi/v/wavefd.svg?style=flat-square
     :alt: Latest version on PyPI
     :target: https://pypi.python.org/pypi/wavefd
@@ -17,18 +12,15 @@ WaveFD
 .. image:: https://img.shields.io/codecov/c/github/fatiando/wavefd/master.svg?style=flat-square
     :alt: Test coverage status
     :target: https://codecov.io/gh/fatiando/wavefd
-.. image:: https://img.shields.io/codeclimate/maintainability/fatiando/wavefd.svg?style=flat-square
-    :alt: Code quality status
-    :target: https://codeclimate.com/github/fatiando/wavefd
 .. image:: https://img.shields.io/codacy/grade/e73169dcb8454b3bb0f6cc5389b228b4.svg?style=flat-square&label=codacy
     :alt: Code quality grade on codacy
     :target: https://www.codacy.com/app/leouieda/wavefd
 .. image:: https://img.shields.io/pypi/pyversions/wavefd.svg?style=flat-square
     :alt: Compatible Python versions.
     :target: https://pypi.python.org/pypi/wavefd
-.. image:: https://img.shields.io/gitter/room/fatiando/wavefd.svg?style=flat-square
+.. image:: https://img.shields.io/gitter/room/fatiando/fatiando.svg?style=flat-square
     :alt: Chat room on Gitter
-    :target: https://gitter.im/fatiando/wavefd
+    :target: https://gitter.im/fatiando/fatiando
 
 
 Disclaimer
@@ -46,6 +38,9 @@ or send us a message on our
 Project goals
 -------------
 
+* Simple 2D elastic seismic wave propagation.
+* Integration with the Jupyter notebook.
+* Use for education first.
 
 
 Contacting Us
