@@ -1,0 +1,17 @@
+*.pyc
+*~
+*.so
+*.pyd
+build/
+dist/
+.*.swp
+.coverage
+.cache
+doc/_build
+doc/modules
+doc/api/wavefd*.rst
+doc/api/generated
+.ipynb_checkpoints
+*.egg-info
+.env
+MANIFEST

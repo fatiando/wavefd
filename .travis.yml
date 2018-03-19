@@ -1,0 +1,107 @@
+language: generic
+
+sudo: false
+
+branches:
+    only:
+        - master
+        # Regex to build tagged commits with version numbers
+        - /\d+\.\d+(\.\d+)?(\S*)?$/
+
+env:
+    global:
+        # CODACY_PROJECT_TOKEN to upload coverage to codacy
+        - secure: "dRpDPbwFU8eqQLpbMvnNeDAcI/zcVes1cd1Dk89zJ/OpBkrr4TLEfp41biVf+3m28j2izmD1kJNZK8Jr2odXELnwixCAWx2zS1SraKorfMyKJ84usYsOZClN6T5Q6KkFZiGw4sGSQm/tY0H1qYT7nhdnbaWZgnMS4kOByM5CIwZBGM+SgUlibnTf+S4hOOOv0dF/Y/T5hBBEBxtDSSc6u+8LFK2DqxCf+CbuWm7HUAAnoQPq1+vRSGsfqCj0y1t8mPx8YOkRo1RKo3aAtUwNkJ64YvoSD640pC6ossbEXoYf0HTed72ICEeI/q4j2EtKZMh0Jzeikhqbg6V7O07rJllY1IVlCuQ1/OYgKeZAerosndW/5UOpQjCODOL6q6YFZ92/a5YGI2LKdbGW7NR0bK03l/WCoIGMDekllZAgdc5ve5GGP1e3tQLjGnwT0oKGcVTG2Myu/IesyxyQ0W+efIEkXm/hcYvfleMzJfxP/DS3B+62fFxgY9ao5iZxIruG/N/1MUGmLVlZyasKcXb8sw9knrJYk22LS6kS15IS+Uz24aGbSMMExukqdut4zzTuW6DlNDTcl10wESBPrDPxB+TSFJMvUWPKbfRVzyJrNC/8/ye2s/lnkYLXKMSAiUAsX/VuZltU8DesZwjTwcipN2njZvudesamG6Y3wfuPPRM="
+        # Github Token for pushing the built docs (GH_TOKEN)
+        - secure: "LuD0Ej1QbddLntpwxKWKK2WWEhrSM4IKhQwF873igrGTW3W43dKlumqcNm+u4SvrnGlgNtNb+/ejpWR13eJ9FIB4nCC6LMS32dUWRbzj/fARFumPRyxt9drIehWvXbGWDmvbWtfzfHq1qrqULKrOWR34EQKmyPnl5NeCRx4R4yooVl5GTRGXp62w0JsXGO91f5ieFzmedKHt/y2NL2LKqD6vPT+qnMLw9JWtYOgJHSG1c03B4ObhrrnXpNUruvytSeVsUV9+81ZzNZmTvoSQtj+9bilJVQcRroGM100Qz7c5fTqoevBvM6CTuNIX/wlwaE7SQnT47P8oG+NH/7D/89sOMLhVQ82sul7ERBT0EXcdDxQ97RAE9wQeVaenG6QZMiBAU1GMADWlnFhlhfnC6ny6hArLulYnNJ6wK1P+gaOymE/Jr7PnKN2pjixx/Q5kvGySEITvQH0GC34faxBMQ0u2Gumbqb+pgG4b18K5RTHbT84YLVJjAMY8lMVBgGlaoYNsU4lH2JuBGbCgDKRWsZ7ANj4sJ3OEu07AORzP3mfhF7QEMDxC8V9i6qY8jvXpOWFs0BVVJxkV6iRLFeHVV86E6sQiO+FckjYZhTqo+hwkdG1C4Lsm0tOH6g9ysPSv2eBwEJ1Zw+xPObblrt4tvYcbxxmk0fHeC29WPLftt1U="
+        # TWINE_PASSWORD to deploy to PyPI
+        - secure: "SanZ21pEOBmJ0Gmoefp9UnG8KHhxAlNJu7nG1dWVVVG0NfTJ/YHYgJ3/REg4WMpLJqPFQItRYww3WREqKnTKAZDW/mnZSHvCMigtiVoyoOQ7pAX/DqO0DmG/HvbrlSmTyhrfE03g7Krdjb37gOyNnqsXsLfP8jgD5y1h1IE/LR3JjnMhEsCoRy50tm8+yw8DQLKuAFK7ttGXb/7GhLhfEBj7yH8aVZMCLvOqWsnRqk/xqOUBf0nUzThoMkQNuVM6Vfn/0SNVHOOn4RueQr0wUh/6t6dz2EtUEJZKyY/sPehk6cS7vRbfV112qh3EniHQ2zFWkGHHsnNb6NtTFx7LuV8qz7RMZI4kOsekCqlzIiL8LLiZ/JHq1i0nymMFPlKGRLwGljAAtHA52NVW/kJPt50z92nVgdzKSbTnPZBuX4fHX6cqZwrI+CrAESfSfQ1Wpk3nXbReqX56nXjTE9VgQ6gbiIlcQ7UOlpfmmDVP7VrLBhTDyQlgemtrx5h29Gm2KTGzV7tH3mfYcGd8Vskku8iFi+i+shVAMdUNkRxxvDFCwMS25JpFfURbbWr6y7/BCliVhjYcHu/PRHRuThwBAENGRjVY9Fh5DDPr1iUMPdFdhvUvd0Ef+Crm9pXnzvxRKFWM4bLgwiOiaG+dlbRvAO8wP1Q5rROtzPN9osXa9n4="
+        - TWINE_USERNAME=Leonardo.Uieda
+        - LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
+        - COVERAGE=false
+        - BUILD_DOCS=false
+        - DEPLOY_DOCS=false
+        - DEPLOY_PYPI=false
+        - CONDA_FLAGS="-c conda-forge --yes --quiet"
+
+matrix:
+    # Build under the following configurations
+    include:
+        - os: linux
+          env:
+              - PYTHON=3.5
+        - os: linux
+          env:
+              - PYTHON=3.6
+              - COVERAGE=true
+              - BUILD_DOCS=true
+              - DEPLOY_DOCS=true
+              - DEPLOY_PYPI=true
+
+before_install:
+    # Get Miniconda from Continuum
+    # Need to source the script to set the PATH variable in this environment
+    # (not the scripts environment)
+    - source ci/install-miniconda.sh
+    - conda update conda $CONDA_FLAGS
+    # Install dependencies
+    - conda install python=$PYTHON pip $CONDA_FLAGS
+    - conda install --file requirements-dev.txt $CONDA_FLAGS
+    - conda install --file requirements.txt $CONDA_FLAGS
+    - if [ "$COVERAGE" == "true" ]; then
+        pip install codacy-coverage;
+      fi
+    # Show installed pkg information for postmortem diagnostic
+    - conda list
+
+install:
+    # Package and install
+    - python setup.py bdist_wheel
+    - pip install dist/*
+
+script:
+    # Check code for PEP8 style and lint for code quality
+    - make pep8
+    - make lint
+    # Run the test suite
+    - if [ "$COVERAGE" == "true" ]; then
+        make coverage;
+      else
+        make test;
+      fi
+    # Build the documentation
+    - if [ "$BUILD_DOCS" == "true" ]; then
+        make -C doc all;
+      fi
+
+after_success:
+    - if [ "$COVERAGE" == "true" ]; then
+        coverage xml;
+        echo "Uploading coverage to Codacy";
+        python-codacy-coverage -r coverage.xml;
+      fi
+
+deploy:
+    # Push the built docs to Github pages
+    - provider: script
+      script: ci/deploy-docs.sh
+      skip_cleanup: true
+      on:
+          branch: master
+          condition: '$DEPLOY_DOCS == "true"'
+    # Push docs when building tags as well
+    - provider: script
+      script: ci/deploy-docs.sh
+      skip_cleanup: true
+      on:
+          tags: true
+          condition: '$DEPLOY_DOCS == "true"'
+    # Make a release on PyPI
+    - provider: script
+      script: ci/deploy-pypi.sh
+      on:
+          tags: true
+          condition: '$DEPLOY_PYPI == "true"'
+
+notifications:
+    email: false

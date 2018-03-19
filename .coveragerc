@@ -1,0 +1,5 @@
+[run]
+omit =
+    */tests/*
+    */_version.py
+    *wavefd/__init__.py

@@ -1,0 +1,20 @@
+name: wavefd
+channels:
+    - conda-forge
+dependencies:
+    - python=3.6
+    - pip
+    - numpy
+    - numba
+    - matplotlib
+    - jupyter
+    - pytest
+    - pytest-cov
+    - coverage
+    - flake8
+    - pylint
+    - sphinx
+    - sphinx_rtd_theme
+    - nbsphinx
+    - numpydoc
+    - twine
