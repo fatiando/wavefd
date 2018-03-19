@@ -6,7 +6,9 @@ dependencies:
     - pip
     - numpy
     - numba
+    - h5py
     - matplotlib
+    - ipython
     - jupyter
     - pytest
     - pytest-cov
