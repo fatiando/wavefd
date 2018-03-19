@@ -67,7 +67,6 @@ class BaseWavelet():
         raise NotImplementedError
 
 
-
 class RickerWavelet(BaseWavelet):
     r"""
     The Ricker (mexican hat) wavelet.
